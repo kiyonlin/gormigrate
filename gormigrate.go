@@ -385,6 +385,11 @@ func (g *Gormigrate) MigrationRan(m *Migration) (bool, error) {
 	if g.tx == nil {
 		g.tx = g.db
 	}
+
+	if err := g.createMigrationTableIfNotExists(); err != nil {
+		return false, err
+	}
+
 	var count int
 	err := g.tx.
 		Table(g.options.TableName).
