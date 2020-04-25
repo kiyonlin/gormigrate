@@ -1,4 +1,4 @@
-module github.com/kiyonlin/gormigrate.v1
+module github.com/kiyonlin/gormigrate/v1
 
 go 1.11
 
